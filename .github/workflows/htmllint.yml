@@ -26,4 +26,4 @@ jobs:
         run: htmlhint index.html
 
       - name: 🧪 Lint CSS
-        run: stylelint style.css
+        run: style.css
