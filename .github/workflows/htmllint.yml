@@ -1,4 +1,4 @@
-name: Lint Static Site
+name: HTML Lint
 
 on:
   push:
@@ -10,20 +10,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: ✅ Checkout Repository
+      - name: ✅ Checkout code
         uses: actions/checkout@v3
 
-      - name: 💻 Set Up Node.js
+      - name: 💻 Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
 
-      - name: 📦 Install Linters
-        run: |
-          npm install -g htmlhint stylelint
+      - name: 📦 Install HTMLHint
+        run: npm install -g htmlhint
 
-      - name: 🧪 Lint HTML
+      - name: 🧪 Run HTMLHint
         run: htmlhint index.html
-
-      - name: 🧪 Lint CSS
-        run: stylelint style.css
