@@ -18,8 +18,8 @@ jobs:
         with:
           args: --acl public-read --delete
         env:
-          AWS_S3_BUCKET: auto-static-github-s3-site        # replace with your bucket name
-          AWS_REGION: ap-south-1                    # Mumbai region (or yours)
+          AWS_S3_BUCKET: auto-static-github-s3-site        # 🪣 your bucket name (no s3://)
+          AWS_REGION: ap-south-1                            # 🇮🇳 Mumbai region
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          SOURCE_DIR: ./ Auto-Static-Github-S3-Site  # folder with index.html
+          SOURCE_DIR: ./Auto-Static-Github-S3-Site          # ✅ no space after ./
