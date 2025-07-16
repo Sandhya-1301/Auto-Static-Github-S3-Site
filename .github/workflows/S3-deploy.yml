@@ -16,7 +16,7 @@ jobs:
       - name: 🔄 Sync to S3
         uses: jakejarvis/s3-sync-action@v0.5.1
         with:
-          args: --acl public-read --delete
+          args: --delete
         env:
           AWS_S3_BUCKET: auto-static-github-s3-site        # 🪣 your bucket name (no s3://)
           AWS_REGION: ap-south-1                            # 🇮🇳 Mumbai region
