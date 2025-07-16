@@ -22,4 +22,4 @@ jobs:
         run: npm install -g htmlhint
 
       - name: 🧪 Run HTMLHint
-        run: htmlhint Auto_Static-Github-S3-Site/index.html
+        run: htmlhint index.html
