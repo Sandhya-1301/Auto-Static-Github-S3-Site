@@ -1,0 +1,25 @@
+name: 🚀 Deploy to Amazon S3
+
+on:
+  push:
+    branches:
+      - main  # or your working branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ✅ Checkout Code
+        uses: actions/checkout@v3
+
+      - name: 🔄 Sync to S3
+        uses: jakejarvis/s3-sync-action@v0.5.1
+        with:
+          args: --acl public-read --delete
+        env:
+          AWS_S3_BUCKET: auto-static-github-s3-site        # replace with your bucket name
+          AWS_REGION: ap-south-1                    # Mumbai region (or yours)
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          SOURCE_DIR: ./AUTO-STATIC-GITHUB-S3-SITE  # folder with index.html
